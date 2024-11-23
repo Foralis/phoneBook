@@ -20,6 +20,7 @@ select item in add delete edit list_all search_by_name; do
       ;;
     delete)
       echo "Выбрали удаление записи."
+      . ./helpers/delete.sh $fileName
       ;;
     edit)
       echo "Выбрали редактирование записи."

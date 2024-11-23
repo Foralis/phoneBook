@@ -1,16 +1,10 @@
 #!/bin/bash
 
-echo "Вызвали скрипт добавления новой записи! Файл $1"
+echo "Добавления новой записи в телефонную книгу $1"
 
-data=""
-
-echo "Введите фамилию:"
-read surname
-echo "Введите имя:"
-read name
-echo "Введите телефон:"
-read phoneNumber
-echo "Введите заметку:"
-read description
+read -p "Введите фамилию:" surname
+read -p "Введите имя:" name
+read -p "Введите телефон:" phoneNumber
+read -p "Введите заметку:" description
 
 echo "$surname $name|$phoneNumber|$description" >> $1
