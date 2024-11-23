@@ -13,4 +13,4 @@ read phoneNumber
 echo "Введите заметку:"
 read description
 
-echo "$surname|$name|$phoneNumber|$description" >> $1
+echo "$surname $name|$phoneNumber|$description" >> $1

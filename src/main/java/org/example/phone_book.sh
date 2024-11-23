@@ -1,10 +1,12 @@
 #!/bin/bash
 
 fileName="tmp.txt"
+
 if [ "$#" -lt 1 ]; then
   echo> $fileName
+  fileName="book.txt"
 else
-  echo> $1
+  #echo> $1
   fileName=$1
 fi
 
@@ -24,9 +26,11 @@ select item in add delete edit list_all search_by_name; do
       ;;
     list_all)
       echo "Выбрали вывод списка всех записей."
+      cat $fileName
       ;;
     search_by_name)
       echo "Выбрали поиск записи."
+      . ./helpers/search.sh $fileName
       ;;
     esac
 done
