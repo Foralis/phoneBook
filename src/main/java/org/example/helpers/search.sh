@@ -1,7 +1,18 @@
 #!/bin/bash
 fileName=$1
 
-echo "Введите фамилию и имя:"
+echo "Введите фамилию и/или имя:"
 read searchText
 
-awk -v pat="$searchText" -F "|" '$1 ~ pat {print $0}' $fileName
+oldIFS=$IFS
+IFS=$'\n'
+found=$(awk -v pat="$searchText" -F "|" '$1 ~ pat {print $0}' $fileName)
+
+
+echo "В телефонной книге $fileName найдены следующие записи:"
+
+for i in ${found[@]}; do
+    echo $i
+done
+
+IFS=$oldIFS
