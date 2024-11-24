@@ -1,9 +1,12 @@
 #!/bin/bash
+
+. ./helpers/utils.sh
+
 fileName=$1
 
 read -p "Введите фамилию и/или имя:" searchText
 
-found=$(awk -v pat="$searchText" -F "|" '$1 ~ pat {print $0}' $fileName)
+found=$(awk -v pat="$searchText" -F "$myDelimiter" '$1 ~ pat {print $0}' $fileName)
 
 echo "В телефонной книге $fileName найдены следующие записи:"
 
