@@ -24,6 +24,7 @@ select item in add delete edit list_all search_by_name; do
       ;;
     edit)
       echo "Выбрали редактирование записи."
+      . ./helpers/edit.sh $fileName
       ;;
     list_all)
       echo "Выбрали вывод списка всех записей."
