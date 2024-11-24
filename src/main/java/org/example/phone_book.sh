@@ -29,6 +29,7 @@ select item in add delete edit list_all search_by_name; do
     list_all)
       echo "Выбрали вывод списка всех записей."
       cat $fileName
+      echo ""
       ;;
     search_by_name)
       echo "Выбрали поиск записи."
