@@ -10,7 +10,7 @@ stringToDelete=${myArr[$deleteIndex]}
 echo "Будет удалена запись:"
 echo $stringToDelete
 
-sed -i "/^$stringToDelete\$/d" $fileName
+sed -i "0,/^$stringToDelete\$/{/^$stringToDelete\$/d;}" $fileName
 #sed -i '0,/^Shiriev Rishat|89613577519|qa autoa\$/d' $fileName
 
 #awk '!/pattern/' file > temp && mv temp file
