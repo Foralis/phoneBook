@@ -4,7 +4,7 @@ fileName="tmp.txt"
 
 if [ "$#" -lt 1 ]; then
   echo> $fileName
-  fileName="book.txt"
+  #fileName="book.txt"
 else
   #echo> $1
   fileName=$1
