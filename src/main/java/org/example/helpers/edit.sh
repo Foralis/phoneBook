@@ -5,11 +5,11 @@ fileName=$1
 . ./helpers/search.sh $fileName
 
 if [ "$isContinue" = true ]; then
-  read -p "Уточните запись для редактирования:" editIndex
+  read -p "Подтвердите редактирование, введя индекс записи:" editIndex
 
   stringToEdit=${myArr[$editIndex]}
 
-  echo "Подтвердите редактирование, введя индекс записи:"
+  echo "Будет отредактирована запись:"
   echo $stringToEdit
 
   nameAndSurname=$(echo $stringToEdit | awk -F "$myDelimiter" '{print $1}')
